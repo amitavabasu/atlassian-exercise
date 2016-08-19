@@ -11,3 +11,8 @@ This project is implementation of 'Developer API Screening Exercise'.
     - Can run "exercise.Application.java" to start spring-boot REST services (as specified in the excercise) at the location: http://localhost:8080/api/v1
 
 - For complete end-to-end test first run the spring boot "exercise.Application" and then the run the "exercise.AtlassianExercise"
+- For maven 
+
+    - $>mvn clean package -DskipTests
+    - $>mvn spring-boot:run
+    - $>mvn test

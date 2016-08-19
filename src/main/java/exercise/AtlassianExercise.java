@@ -101,7 +101,7 @@ public class AtlassianExercise {
 	}
 	
 	//TEST METHOD
-	public void testMethod(String host, List<String> issueTypes){
+	public Map<String, Integer> testMethod(String host, List<String> issueTypes){
 		HOST = host;
 		phaser.bulkRegister(issueTypes.size()+1);
 		for(String issueType:issueTypes){
@@ -110,20 +110,21 @@ public class AtlassianExercise {
 		}
 		phaser.arriveAndAwaitAdvance();
 		printResult();
+		return totalEstimateByIssueType;
 	}
 	
 	//MAIN
-	public static void main(String[] args){
-		// Process provided input for correctness and invoke test method on an instance
-		if(args.length == 0)
-			System.exit(0);
-		String host = args[0].trim();
-		List<String> issueTypes = new ArrayList<String>();
-		for(int i=1; i<args.length; i++){
-			issueTypes.add(args[i]);
-		}
-		if(issueTypes.size()==0)
-			System.exit(0);
-		new AtlassianExercise().testMethod(host, issueTypes);
-	}
+//	public static void main(String[] args){
+//		// Process provided input for correctness and invoke test method on an instance
+//		if(args.length == 0)
+//			System.exit(0);
+//		String host = args[0].trim();
+//		List<String> issueTypes = new ArrayList<String>();
+//		for(int i=1; i<args.length; i++){
+//			issueTypes.add(args[i]);
+//		}
+//		if(issueTypes.size()==0)
+//			System.exit(0);
+//		new AtlassianExercise().testMethod(host, issueTypes);
+//	}
 }
